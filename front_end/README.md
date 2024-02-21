@@ -48,7 +48,7 @@ front_end/
 
 - **User Authentication**: Secure login functionality to authenticate users.
 - **Catalog Browsing**: Users can view a list of items, complete with pagination.
-- **Search and Filter**: Dynamic searching and filtering of catalog items based on user input.
+- **Search and Filter**: Dynamic searching, ordering and filtering of catalog items based on user input.
 - **Responsive Design**: Built with Bootstrap for a responsive layout that adapts to various screen sizes.
 
 ## Installation and Setup
@@ -93,4 +93,4 @@ Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) fo
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
