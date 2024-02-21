@@ -1,23 +1,24 @@
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
+// The API routes are imported from 'routes/api'.
 const api = require("./routes/api");
 
 const app = express();
 
-// helmet() is a middleware that sets various HTTP headers to make the app more secure
+// 'helmet' is used to set HTTP security headers to protect against common web vulnerabilities.
 app.use(helmet());
-// express.json() is a middleware that parses incoming requests with JSON payloads
+// Parses incoming requests with JSON payloads, a necessary middleware for receiving JSON input.
 app.use(express.json());
 
-// cors() is a middleware that enables cross-origin resource sharing
+// The 'cors' middleware is configured to accept requests from the specified origin for cross-origin resource sharing.
 app.use(
   cors({
     origin: "http://localhost:8080",
   })
 );
 
-// mount the api router at /api/v1 to version the api
+// The API routes are mounted at '/api/v1' to provide versioning to the API endpoints.
 app.use("/api/v1", api);
 
 module.exports = app;

@@ -1,5 +1,7 @@
-// this file contains the functions to build the query for the database
-// to get the products with pagination
+/**
+ * This service provides utility functions for building MongoDB queries for product retrieval.
+ * It includes pagination, sorting, and time-based filtering functionalities.
+ */
 
 const DEFAULT_PAGE_LIMIT = 10;
 const DEFAULT_PAGE_Number = 1;
@@ -10,61 +12,43 @@ const TIME_FILTER_NAMES = Object.freeze({
   LAST_WEEK: "LAST_WEEK",
 });
 
+// Builds a pagination object based on query parameters from the request.
 function getPagination(query) {
   const page = Math.abs(query.page) || DEFAULT_PAGE_Number;
   const limit = Math.abs(query.limit) || DEFAULT_PAGE_LIMIT;
   const skip = (page - 1) * limit;
 
-  return {
-    skip,
-    limit,
-  };
+  return { skip, limit };
 }
 
-/**
- * Generates a Mongoose sort object based on the input parameters.
- * @param {string} sortBy - The field name to sort by.
- * @param {string} sortOrder - The order direction ('asc' or 'desc').
- * @returns {Object} - A sort object for Mongoose queries.
- */
+// Creates a sorting object for MongoDB queries based on provided fields and order.
 function generateSortObject(sortBy = "creationDate", sortOrder = "desc") {
   const order = sortOrder === "asc" ? 1 : -1;
 
-  return {
-    [sortBy]: order,
-  };
+  return { [sortBy]: order };
 }
 
-/**
- * @param {Object} params
- * @param {string} params.timeFilterName
- */
+// Generates a MongoDB query filter object to filter records based on a predefined time filter name.
 function generateTimeFilter({ timeFilterName }) {
-  if (timeFilterName === TIME_FILTER_NAMES.YESTERDAY) {
-    const dateNow = new Date();
-    const startYesterday = new Date();
-    startYesterday.setDate(dateNow.getDate() - 1);
-    startYesterday.setHours(0, 0, 0, 0);
+  const dateNow = new Date();
 
-    const endYesterday = new Date(startYesterday);
-    endYesterday.setDate(startYesterday.getDate() + 1);
-
-    return { $gte: startYesterday, $lt: endYesterday };
+  switch (timeFilterName) {
+    case TIME_FILTER_NAMES.YESTERDAY:
+      const startYesterday = new Date(dateNow.setDate(dateNow.getDate() - 1));
+      startYesterday.setHours(0, 0, 0, 0);
+      const endYesterday = new Date(startYesterday);
+      endYesterday.setDate(startYesterday.getDate() + 1);
+      return { $gte: startYesterday, $lt: endYesterday };
+    case TIME_FILTER_NAMES.LAST_HOUR:
+      const lastHour = new Date(dateNow.setHours(dateNow.getHours() - 1));
+      return { $gte: lastHour };
+    case TIME_FILTER_NAMES.LAST_WEEK:
+      const lastWeek = new Date(dateNow.setDate(dateNow.getDate() - 7));
+      lastWeek.setHours(0, 0, 0, 0);
+      return { $gte: lastWeek };
+    default:
+      return {}; // No filter applied.
   }
-
-  if (timeFilterName === TIME_FILTER_NAMES.LAST_HOUR) {
-    const lastHour = new Date();
-    lastHour.setHours(lastHour.getHours() - 1);
-    return { $gte: lastHour };
-  }
-
-  if (timeFilterName === TIME_FILTER_NAMES.LAST_WEEK) {
-    const lastWeek = new Date();
-    lastWeek.setDate(lastWeek.getDate() - 7);
-    lastWeek.setHours(0, 0, 0, 0);
-    return { $gte: lastWeek };
-  }
-  return {};
 }
 
 module.exports = {

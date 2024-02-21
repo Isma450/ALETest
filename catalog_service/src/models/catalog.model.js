@@ -1,8 +1,12 @@
-const productsDatabase = require("./catalog.mongo.js");
+/**
+ * This module provides the database operations required to manage the products in the catalog.
+ * It interacts with the MongoDB database using the Product model to fetch and manipulate product data.
+ */
 
+const productsDatabase = require("./catalog.mongo.js");
 const DEFAULT_SEARCH_FIELD = "mac";
-// get all products from the database
-// Adjusted getAllProducts function to accept a sort object
+
+// Retrieve all products from the database with optional filters and pagination.
 async function getAllProducts({
   skip,
   limit,
@@ -10,35 +14,33 @@ async function getAllProducts({
   searchText,
   createdDateFilter,
 }) {
-  const findQuery = {}; // mac, createdDate: {}
+  // Build the query based on provided search text and date filters.
+  const findQuery = {};
   if (searchText) {
     findQuery[DEFAULT_SEARCH_FIELD] = searchText;
   }
-
-  if (createdDateFilter && Object.keys(createdDateFilter)?.length > 0) {
-    // making sure it is not empty
+  if (createdDateFilter && Object.keys(createdDateFilter).length > 0) {
     findQuery.creationDate = createdDateFilter;
   }
 
+  // Perform the query with skipping, limiting, and sorting.
   return await productsDatabase
-    .find(findQuery, { _id: 0, __v: 0 })
+    .find(findQuery)
     .skip(skip)
     .limit(limit)
     .sort(sort);
 }
 
-// get all products from the database
+// Calculate the total count of all products that match the query. Useful for pagination.
 async function getCountAllProducts({ searchText, createdDateFilter }) {
   const findQuery = {};
   if (searchText) {
     findQuery[DEFAULT_SEARCH_FIELD] = searchText;
   }
-
-  if (createdDateFilter && Object.keys(createdDateFilter)?.length > 0) {
-    // making sure it is not empty
+  if (createdDateFilter && Object.keys(createdDateFilter).length > 0) {
     findQuery.creationDate = createdDateFilter;
   }
-  return await productsDatabase.countDocuments(findQuery, { _id: 0, __v: 0 });
+  return await productsDatabase.countDocuments(findQuery);
 }
 
 // Initialize the database with 100000 products if it's empty ()
@@ -78,7 +80,7 @@ async function initializeDB() {
   }
 }
 
-// add a new product to the database
+// Add a new product to the database, updating if it exists based on the name.
 async function addNewProduct(product) {
   return await productsDatabase.findOneAndUpdate(
     { name: product.name },
@@ -87,7 +89,7 @@ async function addNewProduct(product) {
   );
 }
 
-// delete a product from the database
+// Delete a product from the database by its ID.
 function deleteProduct(id) {
   return productsDatabase.findByIdAndDelete(id);
 }

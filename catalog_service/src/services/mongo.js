@@ -1,30 +1,31 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-// Load environment variables from the .env file using the dotenv package
+// Configure environment variables for the database from a .env file.
 dotenv.config({
   path: require("path").resolve(__dirname, "../../database.env"),
 });
 
-//the database connection string
+// Log to the console once the MongoDB connection is established.
 mongoose.connection.once("open", () => {
-  console.log(" MongoDB connection ready!");
+  console.log("MongoDB connection ready!");
 });
 
+// Handle any errors during MongoDB connection setup.
 mongoose.connection.on("error", (err) => {
   console.error("MongoDB connection error: ", err);
 });
 
+// Connect to the MongoDB database with the connection string from environment variables.
 async function mongoConnect() {
-  //the database connection string
   const DB = process.env.DATABASE_URL.replace(
     "<password>",
     process.env.DATABASE_PASSWORD
   );
-
   await mongoose.connect(DB);
 }
 
+// Disconnect from the MongoDB database.
 async function mongoDisconnect() {
   await mongoose.disconnect();
 }
