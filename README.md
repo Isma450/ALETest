@@ -48,10 +48,11 @@ npm run watch
 
 The application is divided into three main directories, each representing a core component of the full-stack application:
 
-ALETest/
+```ALETest/
 ├── catalog_service/ # Node.js Catalog Service
 ├── front_end/ # Vue.js Frontend Application
 └── backend_service/ # Node.js Backend Service
+```
 
 # Installation and Setup
 
@@ -100,3 +101,7 @@ Special thanks to the following technologies and resources that made this projec
 - Jest
 - Vite
 - Bootstrap
+
+```
+
+```
