@@ -73,8 +73,8 @@ The application is divided into three main directories, each representing a core
 After installation, you can use the system as follows:
 
 - Access the Frontend application at http://localhost:8080 for catalog browsing and user authentication.
-- Utilize the RESTful API endpoints provided by the Catalog Service for product management.
-- The Backend Service handles user authentication requests and protects routes requiring authorization.
+- Utilize the RESTful API endpoints provided by the Catalog Service for product management at port http://localhost:4000.
+- The Backend Service handles user authentication requests and protects routes requiring authorization at port http://localhost:3000.
 
 ## API Documentation
 

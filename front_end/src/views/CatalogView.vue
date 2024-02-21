@@ -10,6 +10,7 @@ import Pagination from '@/components/catalog/Pagination.vue'
 // Initialization of the store and definition of component methods for updating the store's state.
 const store = useStore()
 
+// Methods for updating the store's state. These methods are called by child components to update the store's state.
 const refetchCatalogItems = () => {
   store.fetchCatalogItems({
     page: store.state.currentPage,
@@ -58,7 +59,6 @@ watch(
 watch(
   () => store.state.sortOrder,
   () => {
-    console.log('changed: sortOrder', store.state.sortOrder)
     refetchCatalogItems()
   }
 )

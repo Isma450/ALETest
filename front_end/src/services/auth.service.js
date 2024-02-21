@@ -1,18 +1,17 @@
+// Function to handle user login.
 export async function login(email, password) {
   try {
+    // Attempt to log in with the provided credentials.
     const response = await fetch('http://localhost:3000/api/v1/users/login', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
     })
     const data = await response.json()
 
-    const token = data.token
-    localStorage.setItem('token', token)
+    // Store the received token in localStorage.
+    localStorage.setItem('token', data.token)
 
-    console.log('Got login data:', data)
     return data.token
   } catch (err) {
     console.error('Error on login:', err)
@@ -20,12 +19,12 @@ export async function login(email, password) {
   }
 }
 
+// Retrieves the stored login token from localStorage.
 export function getToken() {
   const token = localStorage.getItem('token')
 
-  // check if token is present in localStorage
   if (!token) {
-    throw new Error('Token manquant dans le localStorage')
+    throw new Error('No token found in localStorage')
   }
 
   return token

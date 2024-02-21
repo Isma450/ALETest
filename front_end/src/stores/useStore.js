@@ -5,9 +5,11 @@ import { getCatalogItems } from '@/services/catalog.service'
 
 /**
  * Defines a 'items' store for managing item-related state: retrieval, filtering, sorting, and pagination.
+ * Utilizes Pinia for state management to facilitate a modular and organized approach.
  */
 export const useStore = defineStore('items', () => {
-  // State: items, search query, pagination details, sorting options, and item count.
+  // State: Structured reactive state to manage catalog items, search criteria, pagination, and sorting.
+  // Reactive ensures state is responsive to changes for real-time UI updates.
   const state = reactive({
     catalogItems: [],
     searchText: '',
@@ -20,22 +22,24 @@ export const useStore = defineStore('items', () => {
   })
 
   /**
-   * Fetches catalog items with pagination and updates the state.
-   * @param {Object} options Pagination options: page and limit.
+   * Fetches catalog items based on current state parameters (pagination, search, and sorting).
+   * @param {Object} options Contains parameters for the API request: page, limit, sortBy, sortOrder, searchText, timeFilter.
+   * This function is asynchronous to handle API request latency.
    */
   async function fetchCatalogItems({ page, limit, sortBy, sortOrder, searchText, timeFilter }) {
     const data = await getCatalogItems({ page, limit, sortBy, sortOrder, searchText, timeFilter })
+    // Updates the local state with fetched data, facilitating a reactive UI update.
     state.catalogItems = data.products
     state.count = data.count
   }
 
   /**
-   * Updates sorting key and order, then applies sorting to items.
+   * Updates sorting criteria and order, applying the new sorting to catalog items.
+   * Toggles sortOrder if the same sorting key is applied or sets it to 'asc' for a different key.
    * @param {string} key Sorting key (e.g., 'date', 'name').
    */
   function updatedSortItems(key) {
-    console.log('updatedSortItems', { key })
-    // Update sortBy and toggle sortOrder for the same key or set to 'asc' for a different key
+    // Conditional logic to manage sorting behavior dynamically based on user interaction.
     if (state.sortBy === key) {
       state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc'
     } else {
@@ -44,11 +48,12 @@ export const useStore = defineStore('items', () => {
     }
   }
 
-  // Computed properties for pagination: total pages and items for the current page.
+  // Computed properties dynamically calculate values based on the reactive state, ensuring efficiency.
+  // Calculates total pages for pagination, enabling dynamic UI pagination controls.
   const totalPages = computed(() => Math.ceil(state.count / state.itemsPerPage))
+  // Represents the items to be displayed on the current page, can be extended to include slicing for actual pagination.
   const paginatedItems = computed(() => state.catalogItems)
 
-  // Exposes state, fetch functions, computed properties, and actions for components.
   return {
     state,
     fetchCatalogItems,
