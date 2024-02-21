@@ -27,10 +27,13 @@ const changePage = (page) => {
 }
 const updateQuery = (query) => {
   store.state.searchText = query
+  store.state.currentPage = 1
+  refetchCatalogItems()
 }
 const handleTimeFilterUpdate = (newTimeFilter) => {
   store.state.timeFilter = newTimeFilter
-  // store.applyFilters()
+  store.state.currentPage = 1
+  refetchCatalogItems()
 }
 
 // Fetch items from the API when the component mounts.
