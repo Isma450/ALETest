@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install-server": "npm install --prefix catalog_service && npm install --prefix backend_service",
+    "install-client": "npm install --prefix front_end",
+    "install": "npm run install-server && npm run install-client",
     "server1": "npm run start --prefix catalog_service",
     "server2": "npm run start --prefix backend_service",
     "client": "npm run dev --prefix front_end",

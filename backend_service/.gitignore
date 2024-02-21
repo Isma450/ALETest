@@ -1,0 +1,5 @@
+#dependencie
+/node_modules
+#env file
+/.env
+/config.env
