@@ -91,9 +91,3 @@ npm run build
 - Pinia - State management library.
 - Bootstrap 5 - Responsive, mobile-first front-end framework.
 - Vite - Frontend tooling.
-
-## Contact
-
-- Developer: ismail Bouloukt
-- Email: boulouktcontact@gmail.com
-- Project Link: https://github.com/Isma450/ALETest

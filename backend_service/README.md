@@ -113,12 +113,6 @@ backend_service
 
 The project includes a suite of tests using Jest and Supertest to validate the functionality of authentication and data retrieval operations.
 
-## Contact
-
-- Developer: ismail Bouloukt
-- Email: boulouktcontact@gmail.com
-- Project Link: https://github.com/Isma450/ALETest
-
 ## Acknowledgements
 
 - [Node.js](https://nodejs.org/)

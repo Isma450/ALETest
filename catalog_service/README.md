@@ -139,12 +139,6 @@ The application comes with a set of unit tests that ensure each API endpoint ope
 
 Contributions to the project are welcome. Please ensure that any pull requests include tests that cover the new functionality or bug fixes.
 
-## Contact
-
-- Developer: ismail Bouloukt
-- Email: boulouktcontact@gmail.com
-- Project Link: https://github.com/Isma450/ALETest
-
 ## Acknowledgements
 
 - [Node.js](https://nodejs.org/)

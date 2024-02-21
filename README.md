@@ -86,7 +86,7 @@ After installation, you can use the system as follows:
 For any inquiries or contributions, please contact:
 
 - Developer: Ismail Bouloukt
-- Email: boulouktcontact@gmail.com
+- Email: contact.bouloukt@gmail.com
 - Project Link: https://github.com/Isma450/ALETest
 
 ## Acknowledgements
