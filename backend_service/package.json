@@ -10,7 +10,7 @@
     "start": "PORT=3000 EMAIL='admin@example.com' PASSWORD='P4sswOrd|23!' nodemon src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ismail Bouloukt",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.7",

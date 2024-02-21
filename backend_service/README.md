@@ -16,7 +16,7 @@ Backend Service is a Node.js application focused on handling authentication and 
 
 ### Prerequisites
 
-- Node.js (v14 or newer)
+- Node.js (v18.14 or newer)
 - A valid JWT secret for signing tokens (can be generated using `utils/generateJWTsecret.js`)
 
 ### Installation

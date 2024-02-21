@@ -17,8 +17,8 @@ The Catalog Service is a Node.js backend application designed to manage an exten
 
 ### Prerequisites
 
-- Node.js (v14 or newer)
-- MongoDB (v4 or newer)
+- Node.js (v18.14 or newer)
+- MongoDB (v6 or newer)
 - PM2 (v5 or newer)
 
 ### Installation

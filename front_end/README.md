@@ -51,6 +51,11 @@ front_end/
 - **Search and Filter**: Dynamic searching, ordering and filtering of catalog items based on user input.
 - **Responsive Design**: Built with Bootstrap for a responsive layout that adapts to various screen sizes.
 
+### Prerequisites
+
+- Node.js (v18.14 or newer)
+- vite 5.1.3
+
 ## Installation and Setup
 
 To get started with this project, clone the repository and install the dependencies:
