@@ -78,6 +78,7 @@ After installation, you can use the system as follows:
 
 ## API Documentation
 
+- Postman Documentation: https://documenter.getpostman.com/view/25539234/2sA2rAxgYf
 - Detailed API documentation is available within the README.md files of the Catalog Service and Backend Service directories, covering available endpoints, request methods, and usage examples.
 
 ## Contact
