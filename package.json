@@ -1,0 +1,15 @@
+{
+  "name": "aletest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server1": "npm run start --prefix catalog_service",
+    "server2": "npm run start --prefix backend_service",
+    "client": "npm run dev --prefix front_end",
+    "watch": "npm run server1 & npm run server2 & npm run client",
+    "test": "cd catalog_service && npm test"
+  },
+  "author": "",
+  "license": "ISC"
+}

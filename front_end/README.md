@@ -1,36 +1,96 @@
-# front
+# Project Overview
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the Frontend Vue.js Project! This repository showcases a modern, responsive Vue.js application tailored for a dynamic catalog viewing experience with authentication features.
 
-## Recommended IDE Setup
+## Table of Contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Introduction](#introduction)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Installation and Setup](#installation-and-setup)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Customize configuration
+## Introduction
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+This Frontend folder, using Vuejs 3 with the Composition API, is designed to provide users with a seamless catalog browsing experience. It includes a login system, an interactive catalog view with search and filter capabilities, ordering logic for Date and name catalogs and pagination to navigate through items efficiently.
 
-## Project Setup
+## Project Structure
 
-```sh
+Here's a brief overview of the project directory:
+
+```plaintext
+front_end/
+├── node_modules/            # Node.js packages
+├── public/                  # Static assets
+│   └── data.json            # Sample data for local development
+├── src/                     # Source files
+│   ├── components/          # Vue components
+│   │   ├── catalog/         # Catalog related components
+│   │   └── common/          # Common components like header, search bar
+│   │   └── login/          # Login related components
+│   ├── views/               # Vue pages
+│   ├── router/              # Vue-router for routing
+│   ├── services/            # Services for handling API requests
+│   └── stores/              # State management with Pinia
+├── .env                     # Environment variables
+├── README.md                # The file you are reading right now
+├── index.html               # Entry point for the HTML
+├── package.json             # Project metadata and dependencies
+└── vite.config.js           # Configuration for Vite
+```
+
+![Project Structure](attachment://CleanShot 2024-02-21 at 09.43.33.png)
+
+## Features
+
+- **User Authentication**: Secure login functionality to authenticate users.
+- **Catalog Browsing**: Users can view a list of items, complete with pagination.
+- **Search and Filter**: Dynamic searching and filtering of catalog items based on user input.
+- **Responsive Design**: Built with Bootstrap for a responsive layout that adapts to various screen sizes.
+
+## Installation and Setup
+
+To get started with this project, clone the repository and install the dependencies:
+
+```bash
+git clone https://your-repository-link.git
+cd front_end
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Copy `.env.example` to `.env` and fill in the required API endpoints and other configurations.
 
-```sh
+## Usage
+
+To run the project locally:
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+Navigate to `http://localhost:8080` to view the application in your browser.
 
-```sh
+For production build:
+
+```bash
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Dependencies
 
-```sh
-npm run lint
-```
-# Vuejsismail
+- Vue.js 3 - Progressive JavaScript framework for building user interfaces.
+- Vue Router - Official router for Vue.js.
+- Pinia - State management library.
+- Bootstrap 5 - Responsive, mobile-first front-end framework.
+- Vite - Frontend tooling.
+
+## Contributing
+
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.
