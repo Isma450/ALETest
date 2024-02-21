@@ -1,0 +1,104 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "type": "Router",
+      "name": "Aouter Model A",
+      "mac": "00:11:22:33:44:55",
+      "ipv4": "192.168.0.1",
+      "online": true,
+      "description": "Main Office",
+      "date": "2024-02-14T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "type": "Switch",
+      "name": "Bwitch Model B",
+      "mac": "66:77:88:99:AA:BB",
+      "ipv4": "192.168.0.2",
+      "online": false,
+      "description": "Secondary Office",
+      "date": "2024-02-14T12:00:00Z"
+    },
+    {
+      "id": 3,
+      "type": "Access Point",
+      "name": "CP Model C",
+      "mac": "CC:DD:EE:FF:00:11",
+      "ipv4": "192.168.0.3",
+      "online": true,
+      "description": "Meeting Room",
+      "date": "2024-02-15T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "type": "Router",
+      "name": "Pouter Model D",
+      "mac": "22:33:44:55:66:77",
+      "ipv4": "192.168.0.4",
+      "online": true,
+      "description": "IT Room",
+      "date": "2024-02-15T12:00:00Z"
+    },
+    {
+      "id": 5,
+      "type": "Switch",
+      "name": "Iwitch Model E",
+      "mac": "88:99:AA:BB:CC:DD",
+      "ipv4": "192.168.0.5",
+      "online": false,
+      "description": "Lab",
+      "date": "2024-02-16T00:00:00Z"
+    },
+    {
+      "id": 6,
+      "type": "Access Point",
+      "name": "OP Model F",
+      "mac": "EE:FF:00:11:22:33",
+      "ipv4": "192.168.0.6",
+      "online": true,
+      "description": "Lobby",
+      "date": "2024-02-16T12:00:00Z"
+    },
+    {
+      "id": 7,
+      "type": "Router",
+      "name": "Vouter Model G",
+      "mac": "44:55:66:77:88:99",
+      "ipv4": "192.168.0.7",
+      "online": true,
+      "description": "Executive Office",
+      "date": "2024-02-17T00:00:00Z"
+    },
+    {
+      "id": 8,
+      "type": "Switch",
+      "name": "Kwitch Model H",
+      "mac": "AA:BB:CC:DD:EE:FF",
+      "ipv4": "192.168.0.8",
+      "online": false,
+      "description": "Open Space",
+      "date": "2024-02-17T12:00:00Z"
+    },
+    {
+      "id": 9,
+      "type": "Access Point",
+      "name": "LP Model I",
+      "mac": "00:11:22:33:44:55",
+      "ipv4": "192.168.0.9",
+      "online": true,
+      "description": "Cafeteria",
+      "date": "2024-02-18T00:00:00Z"
+    },
+    {
+      "id": 10,
+      "type": "Router",
+      "name": "Qouter Model J",
+      "mac": "66:77:88:99:AA:BB",
+      "ipv4": "192.168.0.10",
+      "online": true,
+      "description": "Reception",
+      "date": "2024-02-18T12:00:00Z"
+    }
+  ]
+}
