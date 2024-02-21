@@ -87,9 +87,11 @@ npm run build
 - Bootstrap 5 - Responsive, mobile-first front-end framework.
 - Vite - Frontend tooling.
 
-## Contributing
+## Contact
 
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
+- Developer: ismail Bouloukt
+- Email: boulouktcontact@gmail.com
+- Project Link: https://github.com/Isma450/ALETest
 
 ## License
 
