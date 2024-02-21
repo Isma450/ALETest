@@ -53,9 +53,9 @@ npm test
 
 ### Endpoints
 
-- `GET /api/v1/products`: Retrieve a list of products with optional query parameters for pagination (`page`, `limit`), sorting (`sortBy`, `sortOrder`), searching (`searchText`), and time-based filters (`timeFilterName`).
-- `POST /api/v1/products`: Add a new product to the catalog.
-- `DELETE /api/v1/products/:id`: Remove a product from the catalog by its ID.
+- `GET /api/v1/catalog`: Retrieve a list of products with optional query parameters for pagination (`page`, `limit`), sorting (`sortBy`, `sortOrder`), searching (`searchText`), and time-based filters (`timeFilterName`).
+- `POST /api/v1/catalog`: Add a new product to the catalog.
+- `DELETE /api/v1/catalog/:id`: Remove a product from the catalog by its ID.
 
 ### Query Parameters
 
@@ -141,9 +141,9 @@ Contributions to the project are welcome. Please ensure that any pull requests i
 
 ## Contact
 
-- Developer: [Your Name]
-- Email: [Your Email]
-- Project Link: [GitHub Repository Link]
+- Developer: ismail Bouloukt
+- Email: boulouktcontact@gmail.com
+- Project Link: https://github.com/Isma450/ALETest
 
 ## Acknowledgements
 
