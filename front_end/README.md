@@ -92,7 +92,3 @@ npm run build
 - Developer: ismail Bouloukt
 - Email: boulouktcontact@gmail.com
 - Project Link: https://github.com/Isma450/ALETest
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
