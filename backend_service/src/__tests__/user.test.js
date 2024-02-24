@@ -23,7 +23,7 @@ describe("Authentication API", () => {
   describe("GET /api/v1/users/catalog-items", () => {
     // please put a valid token here in the token variable : if not the test will fail
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA4NTAwNzQzLCJleHAiOjE3MDg1MDQzNDN9.fuI6fwnSbG4z2orYDEQh5PAIFPpPUE_vvG0LOugqChI";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA4NTE2MDkxLCJleHAiOjE3MDg2MDI0OTF9.MbafTr49YK8oy3clyKHpLwzoflVa9-qJqvAKLrcRtag";
     // Test for the 401 status code when the token is missing
     test("it should respond with 401 if token is missing", async () => {
       const response = await request(app).get("/api/v1/users/catalog-items");
