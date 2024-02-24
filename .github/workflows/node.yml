@@ -6,10 +6,12 @@ on:
     branches: [main]
 jobs:
   build:
+    env:
+      CI: true
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 19, 20]
+        node-version: [18.x, 19.x, 20.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js version ${{ matrix.node-version }}
@@ -18,3 +20,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build --prefix front_end
+      - run: npm test
