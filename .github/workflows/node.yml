@@ -8,12 +8,12 @@ jobs:
   build:
     env:
       CI: true
-      MONGODB_URL: mongodb://localhost:27017/catalog
+      MONGODB_URL: mongodb://localhost/catalog
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x, 19.x, 20.x]
-        mongodb-version: [4.4]
+        mongodb-version: ["4.2", "4.4", "5.0", "6.0"]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js version ${{ matrix.node-version }}
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Use mongodb from github Actions
-        uses: supercharge/mongodb-github-action@v1
+        uses: supercharge/mongodb-github-action@1.10.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
 
