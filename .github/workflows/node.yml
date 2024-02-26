@@ -8,7 +8,7 @@ jobs:
   build:
     env:
       CI: true
-      MONGODB_URL: mongodb://localhost/catalog
+      DATABASE_URL: mongodb://localhost/catalog
     runs-on: ubuntu-latest
     strategy:
       matrix:
